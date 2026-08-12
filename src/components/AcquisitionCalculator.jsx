@@ -47,22 +47,22 @@ export default function AcquisitionCalculator({ onOpenModal }) {
         </div>
 
         {/* Calculator Grid */}
-        <div className="glass-card p-8 md:p-12 border-[#00f0ff]/30 relative overflow-hidden shadow-2xl">
+        <div className="glass-card p-5 sm:p-8 md:p-12 border-[#00f0ff]/30 relative overflow-hidden shadow-2xl">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Inputs */}
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-6 space-y-5 sm:space-y-6">
               
               {/* Vertical Selector */}
               <div>
-                <label className="block text-xs font-extrabold text-slate-300 uppercase tracking-wider mb-2">
+                <label className="block text-[11px] sm:text-xs font-extrabold text-slate-300 uppercase tracking-wider mb-2">
                   1. Select Service Industry
                 </label>
                 <select 
                   value={vertical}
                   onChange={(e) => setVertical(e.target.value)}
-                  className="w-full py-3 px-4 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm focus:border-[#00f0ff] focus:outline-none"
+                  className="w-full py-3 px-4 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-xs sm:text-sm focus:border-[#00f0ff] focus:outline-none"
                 >
                   <option value="plumbing">Plumbing & HVAC Service</option>
                   <option value="laundry">Laundry & Dry Cleaning</option>
@@ -76,10 +76,10 @@ export default function AcquisitionCalculator({ onOpenModal }) {
               {/* Revenue Slider */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="text-xs font-extrabold text-slate-300 uppercase tracking-wider">
+                  <label className="text-[11px] sm:text-xs font-extrabold text-slate-300 uppercase tracking-wider">
                     2. Monthly Business Revenue
                   </label>
-                  <span className="text-lg font-extrabold text-[#00f0ff] font-['Outfit']">
+                  <span className="text-base sm:text-lg font-extrabold text-[#00f0ff] font-['Outfit']">
                     ${revenue.toLocaleString()} / mo
                   </span>
                 </div>
@@ -90,9 +90,9 @@ export default function AcquisitionCalculator({ onOpenModal }) {
                   step="5000"
                   value={revenue}
                   onChange={(e) => { setRevenue(Number(e.target.value)); triggerConfetti(); }}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer"
+                  className="w-full h-3 sm:h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-[11px] text-slate-500 font-bold mt-1">
+                <div className="flex justify-between text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1.5">
                   <span>$10,000/mo</span>
                   <span>$125,000/mo</span>
                   <span>$250,000+/mo</span>
@@ -102,10 +102,10 @@ export default function AcquisitionCalculator({ onOpenModal }) {
               {/* Team Size */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="text-xs font-extrabold text-slate-300 uppercase tracking-wider">
+                  <label className="text-[11px] sm:text-xs font-extrabold text-slate-300 uppercase tracking-wider">
                     3. Team & Staff Size
                   </label>
-                  <span className="text-lg font-extrabold text-white font-['Outfit']">
+                  <span className="text-base sm:text-lg font-extrabold text-white font-['Outfit']">
                     {teamSize} Staff Members
                   </span>
                 </div>
@@ -116,16 +116,16 @@ export default function AcquisitionCalculator({ onOpenModal }) {
                   step="1"
                   value={teamSize}
                   onChange={(e) => setTeamSize(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer"
+                  className="w-full h-3 sm:h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
 
               {/* Main Bottleneck */}
               <div>
-                <label className="block text-xs font-extrabold text-slate-300 uppercase tracking-wider mb-2">
+                <label className="block text-[11px] sm:text-xs font-extrabold text-slate-300 uppercase tracking-wider mb-2">
                   4. Current Primary Bottleneck
                 </label>
-                <div className="grid grid-cols-2 gap-3 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                   <button
                     type="button"
                     onClick={() => setBottleneck('calls')}
@@ -177,53 +177,53 @@ export default function AcquisitionCalculator({ onOpenModal }) {
 
             {/* Right Output Panel */}
             <div className="lg:col-span-6">
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-[#121827] to-[#07090e] border border-slate-700 space-y-6 shadow-2xl relative">
+              <div className="p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[#121827] to-[#07090e] border border-slate-700 space-y-5 sm:space-y-6 shadow-2xl relative">
                 
-                <div className="inline-flex items-center gap-2 text-xs font-bold text-[#00f0ff] uppercase tracking-wider bg-[#00f0ff]/10 px-3 py-1 rounded-full border border-[#00f0ff]/30">
+                <div className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold text-[#00f0ff] uppercase tracking-wider bg-[#00f0ff]/10 px-3 py-1 rounded-full border border-[#00f0ff]/30">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>FORGEPOINT AI ESTIMATED VALUATION</span>
                 </div>
 
                 <div className="space-y-1">
-                  <div className="text-xs text-slate-400 font-bold uppercase tracking-wider">Estimated Cash Buyout Range</div>
-                  <div className="text-3xl md:text-4xl font-extrabold text-white font-['Outfit']">
+                  <div className="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider">Estimated Cash Buyout Range</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-['Outfit']">
                     ${buyoutLow.toLocaleString()} - ${buyoutHigh.toLocaleString()}
                   </div>
-                  <div className="text-xs text-slate-400">100% upfront cash or custom equity rollover options available</div>
+                  <div className="text-[11px] sm:text-xs text-slate-400">100% upfront cash or custom equity rollover options available</div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800">
-                  <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="text-xs text-slate-400 mb-1">Post-Revival Monthly Target</div>
-                    <div className="text-xl font-bold text-emerald-400 font-['Outfit']">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-3.5 sm:pt-4 border-t border-slate-800">
+                  <div className="p-3 sm:p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div className="text-[10px] sm:text-xs text-slate-400 mb-1">Post-Revival Target</div>
+                    <div className="text-base sm:text-xl font-bold text-emerald-400 font-['Outfit']">
                       ${revivedRevenue.toLocaleString()} / mo
                     </div>
                   </div>
-                  <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="text-xs text-slate-400 mb-1">Target Profit Margin</div>
-                    <div className="text-xl font-bold text-[#ff5500] font-['Outfit']">
+                  <div className="p-3 sm:p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div className="text-[10px] sm:text-xs text-slate-400 mb-1">Target Margin</div>
+                    <div className="text-base sm:text-xl font-bold text-[#ff5500] font-['Outfit']">
                       ~{marginJump}% EBITDA
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-2 text-xs text-slate-300 pt-2">
+                <div className="space-y-2 text-[11px] sm:text-xs text-slate-300 pt-1">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>Current team retention guaranteed</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>Closing within 14 business days</span>
                   </div>
                 </div>
 
                 <button 
                   onClick={onOpenModal}
-                  className="w-full py-4 rounded-xl btn-primary text-center justify-center font-bold text-base shadow-xl"
+                  className="w-full py-3.5 sm:py-4 rounded-xl btn-primary text-center justify-center font-bold text-xs sm:text-base shadow-xl"
                 >
-                  <span>Submit My Business For This Valuation</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <span>Submit My Business For Valuation</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 </button>
 
               </div>

@@ -99,7 +99,7 @@ export default function Playbook() {
         </div>
 
         {/* 5-Step Stepper Cards Header */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 sm:gap-3 mb-8 sm:mb-10">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             const isActive = activeStep === idx;
@@ -107,7 +107,7 @@ export default function Playbook() {
               <button
                 key={step.id}
                 onClick={() => setActiveStep(idx)}
-                className={`p-4 rounded-xl border text-left transition-all relative overflow-hidden ${
+                className={`p-3 sm:p-4 rounded-xl border text-left transition-all relative overflow-hidden ${
                   isActive
                     ? 'bg-gradient-to-b from-[#1c2336] to-[#0e121d] border-[#ff5500] shadow-lg shadow-orange-950/40'
                     : 'bg-[#0d111a]/80 border-slate-800 hover:border-slate-700 hover:bg-[#131926]'
@@ -117,14 +117,14 @@ export default function Playbook() {
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff5500] to-[#ffaa00]" />
                 )}
                 
-                <div className="flex items-center justify-between mb-2">
-                  <span className={`text-xs font-black font-['Outfit'] ${isActive ? 'text-[#ff5500]' : 'text-slate-500'}`}>
+                <div className="flex items-center justify-between mb-1.5 sm:mb-2">
+                  <span className={`text-[10px] sm:text-xs font-black font-['Outfit'] ${isActive ? 'text-[#ff5500]' : 'text-slate-500'}`}>
                     STEP 0{step.num}
                   </span>
-                  <Icon className={`w-5 h-5 ${isActive ? 'text-[#00f0ff]' : 'text-slate-400'}`} />
+                  <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${isActive ? 'text-[#00f0ff]' : 'text-slate-400'}`} />
                 </div>
 
-                <div className={`font-extrabold text-base font-['Outfit'] ${isActive ? 'text-white' : 'text-slate-300'}`}>
+                <div className={`font-extrabold text-xs sm:text-base font-['Outfit'] ${isActive ? 'text-white' : 'text-slate-300'}`}>
                   {step.title}
                 </div>
               </button>
@@ -133,40 +133,40 @@ export default function Playbook() {
         </div>
 
         {/* Active Step Detailed Showcase Panel */}
-        <div className="glass-card p-8 md:p-12 relative border-[#ff5500]/30 shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="glass-card p-5 sm:p-8 md:p-12 relative border-[#ff5500]/30 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             
             {/* Left: Step Overview */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-6">
               
               <div className="flex items-center gap-3">
-                <span className="w-12 h-12 rounded-xl bg-[#ff5500]/20 text-[#ff5500] border border-[#ff5500]/40 flex items-center justify-center font-extrabold text-xl font-['Outfit']">
+                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#ff5500]/20 text-[#ff5500] border border-[#ff5500]/40 flex items-center justify-center font-extrabold text-lg sm:text-xl font-['Outfit'] shrink-0">
                   {steps[activeStep].num}
                 </span>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-extrabold text-white font-['Outfit']">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white font-['Outfit']">
                     {steps[activeStep].num}. {steps[activeStep].title}
                   </h3>
-                  <div className="text-xs font-bold text-[#00f0ff] uppercase tracking-wider">
+                  <div className="text-[10px] sm:text-xs font-bold text-[#00f0ff] uppercase tracking-wider">
                     {steps[activeStep].aiTool}
                   </div>
                 </div>
               </div>
 
-              <p className="text-xl font-semibold text-slate-100 leading-snug">
+              <p className="text-base sm:text-xl font-semibold text-slate-100 leading-snug">
                 "{steps[activeStep].tagline}"
               </p>
 
-              <p className="text-slate-300 text-base leading-relaxed">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
                 {steps[activeStep].detail}
               </p>
 
-              <div className="space-y-3 pt-2">
-                <div className="text-xs font-extrabold uppercase tracking-wider text-slate-400">Key Execution Pillars:</div>
+              <div className="space-y-2.5 sm:space-y-3 pt-2">
+                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-400">Key Execution Pillars:</div>
                 {steps[activeStep].deliverables.map((item, dIdx) => (
-                  <div key={dIdx} className="flex items-start gap-3 text-slate-200">
-                    <CheckCircle2 className="w-5 h-5 text-[#ff5500] shrink-0 mt-0.5" />
-                    <span className="text-sm font-medium">{item}</span>
+                  <div key={dIdx} className="flex items-start gap-2.5 sm:gap-3 text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff5500] shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm font-medium">{item}</span>
                   </div>
                 ))}
               </div>
@@ -175,12 +175,12 @@ export default function Playbook() {
 
             {/* Right: Visual Card */}
             <div className="lg:col-span-5">
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-[#131927] to-[#0a0d14] border border-slate-700/80 space-y-6 relative overflow-hidden">
+              <div className="p-5 sm:p-8 rounded-2xl bg-gradient-to-br from-[#131927] to-[#0a0d14] border border-slate-700/80 space-y-5 sm:space-y-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-32 h-32 bg-[#00f0ff]/10 rounded-full blur-2xl pointer-events-none" />
 
-                <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Phase Benchmark</span>
-                  <span className="text-xs font-extrabold text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded border border-emerald-500/30">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3.5 sm:pb-4">
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest">Phase Benchmark</span>
+                  <span className="text-[10px] sm:text-xs font-extrabold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-emerald-500/30">
                     Active Module
                   </span>
                 </div>

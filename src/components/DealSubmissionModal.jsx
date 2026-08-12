@@ -29,13 +29,14 @@ export default function DealSubmissionModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-[#0e121d] border border-[#ff5500]/40 rounded-2xl p-6 md:p-10 shadow-2xl my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto overscroll-contain">
+      <div className="relative w-full max-w-2xl max-h-[90dvh] overflow-y-auto overscroll-contain bg-[#0e121d] border border-[#ff5500]/40 rounded-2xl p-5 sm:p-8 md:p-10 shadow-2xl my-auto">
         
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
+          aria-label="Close Modal"
+          className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
