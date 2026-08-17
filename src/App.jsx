@@ -17,7 +17,7 @@ export default function App() {
   const handleCloseModal = () => setModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 font-['Plus_Jakarta_Sans'] selection:bg-[#ff5500] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 font-['Inter'] selection:bg-orange-700 selection:text-white">
       {/* Top Navbar */}
       <Navbar onOpenModal={handleOpenModal} />
 
