@@ -24,8 +24,8 @@ export default function Navbar({ onOpenModal }) {
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 font-['Plus_Jakarta_Sans']">ForgePoint</span>
-              <span className="text-[11px] font-extrabold px-1.5 py-0.5 rounded bg-orange-100 text-orange-800 border border-orange-200 uppercase tracking-widest font-['Plus_Jakarta_Sans']">AI</span>
+              <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 font-['Plus_Jakarta_Sans']">ForgePoint
+              <span><i>AI</i></span></span>
             </div>
             <div className="text-[9px] tracking-[0.2em] text-slate-500 uppercase font-semibold">
               CAPITAL & OPERATIONAL AI
