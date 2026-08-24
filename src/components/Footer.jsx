@@ -16,12 +16,13 @@ export default function Footer({ onOpenModal }) {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-orange-700 text-white flex items-center justify-center shadow-md">
-                <Layers className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl bg-white text-white flex items-center justify-center shadow-md overflow-hidden p-0.5">
+                <img src="/logo.jpg" alt="GetForgePointAI Logo" className="w-full h-full object-cover rounded-lg" />
               </div>
               <div>
-                <span className="font-extrabold text-2xl tracking-tight text-white font-['Plus_Jakarta_Sans']">ForgePoint</span>
-                <span className="ml-1 text-xs font-bold px-1.5 py-0.5 rounded bg-orange-950 text-orange-400 border border-orange-800 uppercase tracking-widest font-['Plus_Jakarta_Sans']">AI</span>
+                <span className="font-extrabold text-2xl tracking-tight text-white font-['Plus_Jakarta_Sans']">
+                  GetForgePoint<span className="text-orange-500">AI</span>
+                </span>
                 <div className="text-[10px] tracking-[0.2em] text-slate-400 uppercase font-semibold">
                   CAPITAL & OPERATIONAL AI
                 </div>

@@ -19,13 +19,14 @@ export default function Navbar({ onOpenModal }) {
         
         {/* Corporate Logomark */}
         <a href="#" className="flex items-center gap-3 group text-decoration-none">
-          <div className="w-10 h-10 rounded-xl bg-[#0f172a] text-white flex items-center justify-center shadow-md group-hover:bg-[#c2410c] transition-colors">
-            <Layers className="w-5 h-5 text-orange-400 group-hover:text-white transition-colors" />
+          <div className="w-10 h-10 rounded-xl bg-[#0f172a] text-white flex items-center justify-center shadow-md overflow-hidden p-0.5 group-hover:scale-105 transition-transform">
+            <img src="/logo.jpg" alt="GetForgePointAI Logo" className="w-full h-full object-cover rounded-lg" />
           </div>
           <div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 font-['Plus_Jakarta_Sans']">ForgePoint
-              <span><i>AI</i></span></span>
+            <div className="flex items-center gap-1">
+              <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 font-['Plus_Jakarta_Sans']">
+                GetForgePoint<span className="text-orange-700">AI</span>
+              </span>
             </div>
             <div className="text-[9px] tracking-[0.2em] text-slate-500 uppercase font-semibold">
               CAPITAL & OPERATIONAL AI
