@@ -33,9 +33,9 @@ export default function Footer({ onOpenModal }) {
               ForgePoint AI is a premier service business acquisition and operational technology firm. We acquire small or struggling local service providers and scale them into high-margin market leaders using artificial intelligence.
             </p>
 
-            <div className="pt-2 flex items-center gap-4 text-xs text-slate-300">
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-slate-300">
               <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-orange-500" /> HQ: Austin, TX</span>
-              <span className="flex items-center gap-1.5"><Mail className="w-4 h-4 text-blue-400" /> deals@forgepoint.ai</span>
+              <a href="mailto:contact@getforgepoint.ai" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="w-4 h-4 text-blue-400" /> contact@getforgepoint.ai</a>
             </div>
           </div>
 
